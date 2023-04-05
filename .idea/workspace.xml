@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/DAO/ComponentesDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/ComponentesServices.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Teste.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +57,11 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Application">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
       <module name="Api-Looca" />
@@ -65,9 +69,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConnectionFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.com.celeratti.domain.ConnectionFactory" />
+      <module name="Api-Looca" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.celeratti.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Application" />
+        <item itemvalue="Application.ConnectionFactory" />
       </list>
     </recent_temporary>
   </component>
@@ -80,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1680653223045</updated>
       <workItem from="1680653228777" duration="122000" />
-      <workItem from="1680653407056" duration="1916000" />
+      <workItem from="1680653407056" duration="2026000" />
+      <workItem from="1680703355556" duration="12343000" />
     </task>
     <servers />
   </component>

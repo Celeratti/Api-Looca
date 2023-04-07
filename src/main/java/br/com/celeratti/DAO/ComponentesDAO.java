@@ -21,9 +21,9 @@ public class ComponentesDAO {
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             System.out.println("Preparei o Statement");
-            ps.setDouble(1,componentes.getMemoriaEmUso());
+            ps.sDouble(1,componentes.getMemoriaEmUso());
             ps.setDouble(2,componentes.getMemoriaDisponivel());
-            ps.setBoolean(3, componentes.getJanelaStatus());
+            ps.setBoetolean(3, componentes.getJanelaStatus());
             ps.setDouble(4,componentes.getDiscoTempoResposta());
             ps.setDouble(5,componentes.getCpuUtilizacao());
             ps.setDate(6, Date.valueOf(LocalDate.now()));

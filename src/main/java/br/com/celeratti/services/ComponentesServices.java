@@ -9,8 +9,6 @@ public class ComponentesServices {
 
 
     public void enviarProBanco(Componentes componentes, Connection con){
-        System.out.println("Entrei no metódo 'enviarProBanco'");
         new ComponentesDAO(con).inserir(componentes);
-        System.out.println("Voltei do método inserir");
     }
 }

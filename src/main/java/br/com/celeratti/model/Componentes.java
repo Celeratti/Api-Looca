@@ -11,7 +11,7 @@ public class Componentes {
     private Long memoriaEmUso;
     private Long memoriaDisponivel;
 
-    private Janela janelaStatus;
+//    private Janela janelaStatus;
     private Long discoTempoResposta;
     private DiscoGrupo discoTempoDeLeitura;
     private Double cpuUtilizacao;
@@ -21,7 +21,6 @@ public class Componentes {
         this.memoriaDisponivel = looca.getMemoria().getDisponivel();
         this.discoTempoResposta = looca.getGrupoDeDiscos().getDiscos().get(0).getTempoDeTransferencia();
         this.cpuUtilizacao = looca.getProcessador().getUso();
-        capturarJanela(looca);
     }
 
     public void capturar(Looca looca) {
@@ -29,19 +28,18 @@ public class Componentes {
         this.memoriaDisponivel = looca.getMemoria().getDisponivel();
         this.discoTempoResposta = looca.getGrupoDeDiscos().getDiscos().get(0).getTempoDeTransferencia();
         this.cpuUtilizacao = looca.getProcessador().getUso();
-        capturarJanela(looca);
     }
 
 
-    public void capturarJanela(Looca looca){
-        List<Janela> Janelas = new ArrayList<>();
-        Janelas = looca.getGrupoDeJanelas().getJanelas();
-        for (int i=0;i<Janelas.size();i++){
-            if (Janelas.get(i).getTitulo().contains("Google Chrome")){
-                janelaStatus = (Janelas.get(i));
-            }
-        }
-    }
+//    public void capturarJanela(Looca looca){
+//        List<Janela> Janelas = new ArrayList<>();
+//        Janelas = looca.getGrupoDeJanelas().getJanelas();
+//        for (int i=0;i<Janelas.size();i++){
+//            if (Janelas.get(i).getTitulo().contains("Google Chrome")){
+//                janelaStatus = (Janelas.get(i));
+//            }
+//        }
+//    }
 
     public Long getMemoriaEmUso() {
         return memoriaEmUso;
@@ -51,9 +49,9 @@ public class Componentes {
         return memoriaDisponivel;
     }
 
-    public String getJanela() {
-        return this.janelaStatus.getTitulo();
-    }
+//    public String getJanela() {
+//        return this.janelaStatus.getTitulo();
+//    }
     public Long getDiscoTempoResposta() {
         return discoTempoResposta;
     }
@@ -70,7 +68,6 @@ public class Componentes {
         return "Componentes:" + "\n" +
                 "memoriaEmUso:" + memoriaEmUso + "\n" +
                 ", memoriaDisponivel:" + memoriaDisponivel + "\n" +
-                ", janelaStatus:" + janelaStatus + "\n" +
                 ", discoTempoResposta:" + discoTempoResposta + "\n" +
                 ", cpuUtilizacao:" + cpuUtilizacao;
     }

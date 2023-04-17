@@ -1,14 +1,13 @@
 package br.com.celeratti.services;
 
-import br.com.celeratti.DAO.ComponentesDAO;
-import br.com.celeratti.domain.ConnectionFactory;
-import br.com.celeratti.model.Componentes;
-import java.sql.Connection;
+import br.com.celeratti.dao.ComponentesDAO;
+import br.com.celeratti.util.Maquina;
+
 
 public class ComponentesServices {
 
 
-    public void enviarProBanco(Componentes componentes, Connection con){
-        new ComponentesDAO(con).inserir(componentes);
+    public void enviarProBanco(Maquina maquina){
+        new ComponentesDAO(maquina.getCon()).inserirDadosComponentes(maquina);
     }
 }

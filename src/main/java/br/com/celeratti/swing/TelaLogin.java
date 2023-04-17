@@ -4,7 +4,14 @@
  */
 package br.com.celeratti.swing;
 
+import br.com.celeratti.services.LoginServices;
 import br.com.celeratti.util.Maquina;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -41,7 +48,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
 
         lbl02.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl02.setText("Token:");
+        lbl02.setText("Senha:");
 
         txt02.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,29 +114,35 @@ public class TelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     public void inserir() throws Exception {
-            Maquina maquina = new Maquina();
-            maquina.getComponentes().capturar(maquina.getLooca());
-            maquina.getServices().enviarProBanco(maquina.getComponentes(), maquina.getCon());
-            new Temporizador().getInput();
+        Maquina maquina = new Maquina();
+        maquina.getComponentes().capturar(maquina.getLooca());
+        maquina.getServices().enviarProBanco(maquina);
+        System.out.println("Ultima inserção feita em " + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        System.out.println("Pressione qualquer tecla para parar");
+        new Temporizador().getInput();
     }
 
-
-
-    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_btnLogarActionPerformed
-//        String email = txt01.getText();
-//        String token = txt02.getText();
+    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {
+        String email = txt01.getText();
+        String senha = txt02.getText();
         this.dispose();
-        System.out.println("Iniciando captura de dados");
-        System.out.println("Pressione qualquer tecla para parar");
-        System.out.println("...");
-        Maquina maquina = new Maquina();
-        maquina.getServices().enviarProBanco(maquina.getComponentes(), maquina.getCon());
-        new Temporizador().getInput();
-        System.out.println("Finalizando");
-        System.out.println("...");
-        System.exit(0);
+        try{
+            if (new LoginServices().verificarLogin(email, senha)) {
+
+                System.out.println("Iniciando captura de dados");
+                System.out.println("...");
+                inserir();
+                System.out.println("Finalizando");
+                System.out.println("...");
+                System.exit(0);
+            } else {
+                System.out.println("Usuário não cadastrado");
+            }
+        }catch (Exception e){
+            throw new RuntimeException(e);
+        }
+
     }
 
     public static void main(String args[]) {
@@ -163,7 +176,7 @@ public class TelaLogin extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JButton btnLogar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lbl01;

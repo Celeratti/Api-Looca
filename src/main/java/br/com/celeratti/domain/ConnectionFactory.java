@@ -7,8 +7,9 @@ public class ConnectionFactory {
 
     public Connection recuperarConexao(){
         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti?user=root&password=root");
-        }catch(SQLException e) {
+        }catch(Exception e) {
             throw new RuntimeException(e);
         }
     }

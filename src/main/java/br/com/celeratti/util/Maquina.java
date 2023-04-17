@@ -8,16 +8,28 @@ import com.github.britooo.looca.api.core.Looca;
 import java.sql.Connection;
 
 public class Maquina {
+    private static int id;
+
     private Componentes componentes;
     private Looca looca;
     private Connection con;
     private ComponentesServices services;
 
     public Maquina() {
+        this.id = 1;
         this.looca = new Looca();
         this.componentes = new Componentes(looca);
         this.con = new ConnectionFactory().recuperarConexao();
         this.services = new ComponentesServices();
+    }
+
+
+    public static int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Componentes getComponentes() {

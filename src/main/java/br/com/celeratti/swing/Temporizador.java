@@ -1,16 +1,9 @@
 package br.com.celeratti.swing;
 
-import br.com.celeratti.domain.ConnectionFactory;
-import br.com.celeratti.model.Componentes;
-import br.com.celeratti.services.ComponentesServices;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.sql.Connection;
+import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.github.britooo.looca.api.core.Looca;
 
 public class Temporizador {
         private String str = "";
@@ -31,12 +24,12 @@ public class Temporizador {
         };
 
     public void getInput() throws Exception {
+
         Timer timer = new Timer();
         timer.schedule( task, 60*1000 );
 
-        BufferedReader in = new BufferedReader(
-                new InputStreamReader( System.in ) );
-        str = in.readLine();
+        Scanner in = new Scanner( System.in );
+        str = in.nextLine();
 
         timer.cancel();
     }

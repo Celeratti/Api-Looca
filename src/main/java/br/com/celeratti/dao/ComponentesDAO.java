@@ -1,6 +1,7 @@
-package br.com.celeratti.DAO;
+package br.com.celeratti.dao;
 
 import br.com.celeratti.model.Componentes;
+import br.com.celeratti.util.Maquina;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -13,19 +14,19 @@ public class ComponentesDAO {
         this.con = connection;
     }
 
-    public void inserir(Componentes componentes) {
+    public void inserirDadosComponentes(Maquina maquina) {
         String sql = "INSERT INTO grupoComponentes(memoriaEmUso,memoriaDisponivel, " +
-                "discoTempoDeResposta,cpuUtilizacao,dtInsercao, horaInsercao) VALUES (?,?,?," +
-                "?,?,?);";
+                "discoTempoDeResposta,cpuUtilizacao,dtInsercao, horaInsercao, fkmaquina) VALUES (?,?,?," +
+                "?,?,?,?);";
         try{
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setDouble(1,componentes.getMemoriaEmUso());
-            ps.setDouble(2,componentes.getMemoriaDisponivel());
-//            ps.setString(3,componentes.getJanela());
-            ps.setDouble(3,componentes.getDiscoTempoResposta());
-            ps.setDouble(4,componentes.getCpuUtilizacao());
+            ps.setDouble(1,maquina.getComponentes().getMemoriaEmUso());
+            ps.setDouble(2,maquina.getComponentes().getMemoriaDisponivel());
+            ps.setDouble(3,maquina.getComponentes().getDiscoTempoResposta());
+            ps.setDouble(4,maquina.getComponentes().getCpuUtilizacao());
             ps.setDate(5, Date.valueOf(LocalDate.now()));
             ps.setTime(6, Time.valueOf(LocalTime.now()));
+            ps.setInt(7, Maquina.getId());
             ps.execute();
             ps.close();
         }catch(SQLException e){

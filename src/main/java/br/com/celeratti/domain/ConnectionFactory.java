@@ -1,18 +1,23 @@
 package br.com.celeratti.domain;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ConnectionFactory {
+    private JdbcTemplate connection;
 
-    public Connection recuperarConexao(){
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti?user=root&password=root");
-        }catch(Exception e) {
-            throw new RuntimeException(e);
-        }
+    public ConnectionFactory() {
+            BasicDataSource dataSource = new BasicDataSource();
+            dataSource.setDriverClassName("org.h2.Driver");
+            dataSource.setUrl("jdbc:h2:file:./banco_teste");
+            dataSource.setUsername("sa");
+            dataSource.setPassword("");
+            this.connection = new JdbcTemplate(dataSource);
     }
+
+    public JdbcTemplate getConnection() {
+        return connection;
+    }
+
 
 
 }

@@ -4,12 +4,12 @@
  */
 package br.com.celeratti.swing;
 
+import br.com.celeratti.dao.CriacaoDeTabelas;
+import br.com.celeratti.domain.ConnectionFactory;
+import br.com.celeratti.services.ComponentesServices;
 import br.com.celeratti.services.LoginServices;
 import br.com.celeratti.util.Maquina;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
@@ -123,26 +123,17 @@ public class TelaLogin extends javax.swing.JFrame {
         new Temporizador().getInput();
     }
 
-    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) {
+    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
         String email = txt01.getText();
         String senha = txt02.getText();
+        new CriacaoDeTabelas().CriarTabelas(new ConnectionFactory().getConnection());
         this.dispose();
-        try{
-            if (new LoginServices().verificarLogin(email, senha)) {
-
-                System.out.println("Iniciando captura de dados");
-                System.out.println("...");
-                inserir();
-                System.out.println("Finalizando");
-                System.out.println("...");
-                System.exit(0);
-            } else {
-                System.out.println("Usuário não cadastrado");
-            }
-        }catch (Exception e){
-            throw new RuntimeException(e);
-        }
-
+        System.out.println("Iniciando captura de dados");
+        System.out.println("...");
+        inserir();
+        System.out.println("Finalizando");
+        System.out.println("...");
+        System.exit(0);
     }
 
     public static void main(String args[]) {

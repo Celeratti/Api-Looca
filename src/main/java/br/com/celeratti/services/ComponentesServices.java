@@ -10,4 +10,6 @@ public class ComponentesServices {
     public void enviarProBanco(Maquina maquina){
         new ComponentesDAO(maquina.getCon()).inserirDadosComponentes(maquina);
     }
+
+
 }

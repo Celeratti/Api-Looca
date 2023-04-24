@@ -15,10 +15,9 @@ import java.time.format.DateTimeFormatter;
 
 /**
  *
- * @author Paula Maria Pires
+ * @author Rayssa Matsui
  */
 public class TelaLogin extends javax.swing.JFrame {
-
     /**
      * Creates new form TelaLogin
      */
@@ -30,90 +29,101 @@ public class TelaLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl01 = new javax.swing.JLabel();
-        txt01 = new javax.swing.JTextField();
-        lbl02 = new javax.swing.JLabel();
-        txt02 = new javax.swing.JTextField();
-        btnLogar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        lblIdenficacao = new javax.swing.JLabel();
+        txtIdentificacao = new javax.swing.JTextField();
+        lblSenha = new javax.swing.JLabel();
+        txtSenha = new javax.swing.JTextField();
+        buttonLogar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lbl01.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl01.setText("Email:");
+        lblTitulo.setFont(new java.awt.Font("Segoe UI Semibold", 3, 48)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(153, 153, 153));
+        lblTitulo.setText("CELERATTI");
 
-        txt01.addActionListener(new java.awt.event.ActionListener() {
+        lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblEmail.setText("Email:");
+
+        txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        lblIdenficacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblIdenficacao.setText("Identificação:");
+
+        txtIdentificacao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtIdentificacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdentificacaoActionPerformed(evt);
             }
         });
 
-        lbl02.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lbl02.setText("Senha:");
+        lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSenha.setText("Senha:");
 
-        txt02.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-            }
-        });
+        txtSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        btnLogar.setBackground(new java.awt.Color(158, 17, 27));
-        btnLogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnLogar.setForeground(new java.awt.Color(255, 255, 255));
-        btnLogar.setText("LOGAR");
-        btnLogar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-                    btnLogarActionPerformed(evt);
-                } catch (Exception e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 3, 48)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("CELERATTI");
+        buttonLogar.setBackground(new java.awt.Color(158, 17, 27));
+        buttonLogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonLogar.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogar.setText("LOGAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(78, 78, 78)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(95, 95, 95)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblIdenficacao, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(55, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnLogar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbl01)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txt01, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(55, 55, 55)
-                        .addComponent(lbl02)
-                        .addGap(18, 18, 18)
-                        .addComponent(txt02, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(237, 237, 237))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(buttonLogar)
+                        .addGap(323, 323, 323))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(49, 49, 49)
+                .addComponent(lblTitulo)
+                .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl01)
-                    .addComponent(txt01, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl02)
-                    .addComponent(txt02, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnLogar)
-                .addGap(0, 22, Short.MAX_VALUE))
+                    .addComponent(lblEmail)
+                    .addComponent(lblIdenficacao)
+                    .addComponent(lblSenha))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(buttonLogar)
+                .addGap(83, 83, 83))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void txtIdentificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdentificacaoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdentificacaoActionPerformed
+        
     public void inserir() throws Exception {
         Maquina maquina = new Maquina();
         maquina.getComponentes().capturar(maquina.getLooca());
@@ -122,10 +132,11 @@ public class TelaLogin extends javax.swing.JFrame {
         System.out.println("Pressione qualquer tecla para parar");
         new Temporizador().getInput();
     }
-
+    
     private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
-        String email = txt01.getText();
-        String senha = txt02.getText();
+        String email = txtEmail.getText();
+        String identificacao = txtIdentificacao.getText();
+        String senha = txtSenha.getText();
         new CriacaoDeTabelas().CriarTabelas(new ConnectionFactory().getConnection());
         this.dispose();
         System.out.println("Iniciando captura de dados");
@@ -135,7 +146,6 @@ public class TelaLogin extends javax.swing.JFrame {
         System.out.println("...");
         System.exit(0);
     }
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -159,6 +169,7 @@ public class TelaLogin extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -166,12 +177,16 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
     }
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonLogar;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblIdenficacao;
+    private javax.swing.JLabel lblSenha;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtIdentificacao;
+    private javax.swing.JTextField txtSenha;
+    // End of variables declaration//GEN-END:variables
 
-    // Variables declaration - do not modify                     
-    private javax.swing.JButton btnLogar;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lbl01;
-    private javax.swing.JLabel lbl02;
-    private javax.swing.JTextField txt01;
-    private javax.swing.JTextField txt02;
 }

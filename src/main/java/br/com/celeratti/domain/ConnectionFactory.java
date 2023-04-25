@@ -8,7 +8,7 @@ public class ConnectionFactory {
     public ConnectionFactory() {
             BasicDataSource dataSource = new BasicDataSource();
             dataSource.setDriverClassName("org.h2.Driver");
-            dataSource.setUrl("jdbc:h2:file:./banco_teste");
+            dataSource.setUrl("jdbc:h2:file:./celeratti");
             dataSource.setUsername("sa");
             dataSource.setPassword("");
             this.connection = new JdbcTemplate(dataSource);

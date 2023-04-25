@@ -18,18 +18,10 @@ public class EspecificacoesHardware {
         return memoriaTotal;
     }
 
-    public void setMemoriaTotal(Long memoriaTotal) {
-        this.memoriaTotal = memoriaTotal;
-    }
-
     public Long getTamanhoDisco() {
         return tamanhoDisco;
     }
-
-    public void setTamanhoDisco(Long tamanhoDisco) {
-        this.tamanhoDisco = tamanhoDisco;
-    }
-
+    
     public String getProcessador() {
         return processador;
     }

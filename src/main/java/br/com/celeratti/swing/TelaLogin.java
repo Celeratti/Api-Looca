@@ -6,9 +6,10 @@ package br.com.celeratti.swing;
 
 import br.com.celeratti.dao.CriacaoDeTabelas;
 import br.com.celeratti.domain.ConnectionFactory;
-import br.com.celeratti.services.ComponentesServices;
-import br.com.celeratti.services.LoginServices;
+import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.util.Maquina;
+import com.github.britooo.looca.api.core.Looca;
+import com.github.britooo.looca.api.util.Conversor;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -35,13 +36,14 @@ public class TelaLogin extends javax.swing.JFrame {
         lblIdenficacao = new javax.swing.JLabel();
         txtIdentificacao = new javax.swing.JTextField();
         lblSenha = new javax.swing.JLabel();
-        txtSenha = new javax.swing.JTextField();
         buttonLogar = new javax.swing.JButton();
+        txtSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI Semibold", 3, 48)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(153, 153, 153));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("CELERATTI");
 
         lblEmail.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -50,6 +52,7 @@ public class TelaLogin extends javax.swing.JFrame {
         txtEmail.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         lblIdenficacao.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblIdenficacao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblIdenficacao.setText("Identificação:");
 
         txtIdentificacao.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -62,40 +65,48 @@ public class TelaLogin extends javax.swing.JFrame {
         lblSenha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblSenha.setText("Senha:");
 
-        txtSenha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-
         buttonLogar.setBackground(new java.awt.Color(158, 17, 27));
         buttonLogar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         buttonLogar.setForeground(new java.awt.Color(255, 255, 255));
         buttonLogar.setText("LOGAR");
+        buttonLogar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblIdenficacao, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(buttonLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(103, 103, 103))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(95, 95, 95)
+                                .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(86, 86, 86))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblIdenficacao, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
+                    .addComponent(lblSenha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(237, 237, 237))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(buttonLogar)
-                        .addGap(323, 323, 323))))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(163, 163, 163))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,13 +119,14 @@ public class TelaLogin extends javax.swing.JFrame {
                     .addComponent(lblIdenficacao)
                     .addComponent(lblSenha))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(buttonLogar)
-                .addGap(83, 83, 83))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtIdentificacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addComponent(buttonLogar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(68, 68, 68))
         );
 
         pack();
@@ -123,29 +135,21 @@ public class TelaLogin extends javax.swing.JFrame {
     private void txtIdentificacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdentificacaoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdentificacaoActionPerformed
-        
-    public void inserir() throws Exception {
-        Maquina maquina = new Maquina();
-        maquina.getComponentes().capturar(maquina.getLooca());
-        maquina.getServices().enviarProBanco(maquina);
-        System.out.println("Ultima inserção feita em " + LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
-        System.out.println("Pressione qualquer tecla para parar");
-        new Temporizador().getInput();
-    }
+
+            
     
-    private void btnLogarActionPerformed(java.awt.event.ActionEvent evt) throws Exception {
+    private void buttonLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogarActionPerformed
         String email = txtEmail.getText();
         String identificacao = txtIdentificacao.getText();
-        String senha = txtSenha.getText();
+        String senha = String.valueOf(txtSenha.getPassword());
         new CriacaoDeTabelas().CriarTabelas(new ConnectionFactory().getConnection());
+        TelaInsercao tela = new TelaInsercao();
         this.dispose();
-        System.out.println("Iniciando captura de dados");
-        System.out.println("...");
-        inserir();
-        System.out.println("Finalizando");
-        System.out.println("...");
-        System.exit(0);
-    }
+        tela.setVisible(true);
+        
+    }//GEN-LAST:event_buttonLogarActionPerformed
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -186,7 +190,7 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtIdentificacao;
-    private javax.swing.JTextField txtSenha;
+    private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
 
 }

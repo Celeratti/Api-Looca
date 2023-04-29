@@ -11,20 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_teste.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/banco_teste.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/banco_teste.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/banco_teste.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/Temporizador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/Temporizador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/Temporizador$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/Temporizador$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/Temporizador.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/Temporizador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/ComponentesServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/EspecificacoesServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/LoginServices.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,6 +206,7 @@
       <workItem from="1682367828945" duration="101000" />
       <workItem from="1682376107672" duration="3115000" />
       <workItem from="1682423724010" duration="7469000" />
+      <workItem from="1682775911849" duration="1427000" />
     </task>
     <servers />
   </component>

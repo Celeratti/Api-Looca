@@ -23,6 +23,5 @@ public class ComponentesDAO {
                 maquina.getComponentes().getCpuUtilizacao(),
                 LocalDate.now(),
                 LocalTime.now());
-
     }
 }

@@ -6,24 +6,19 @@ import br.com.celeratti.services.Services;
 import com.github.britooo.looca.api.core.Looca;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.sql.Connection;
+
 public class Maquina {
-    private int id;
     private Componentes componentes;
     private Looca looca;
-    private JdbcTemplate con;
+    private Connection con;
     private Services services;
 
     public Maquina() {
-        this.id = 1;
         this.looca = new Looca();
         this.componentes = new Componentes(looca);
         this.con = new ConnectionFactory().getConnection();
         this.services = new Services();
-    }
-
-
-    public int getId() {
-        return id;
     }
 
 
@@ -35,7 +30,7 @@ public class Maquina {
         return looca;
     }
 
-    public JdbcTemplate getCon() {
+    public Connection getCon() {
         return con;
     }
 

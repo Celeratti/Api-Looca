@@ -4,15 +4,7 @@
  */
 package br.com.celeratti.swing;
 
-import br.com.celeratti.dao.CriacaoDeTabelas;
 import br.com.celeratti.domain.ConnectionFactory;
-import br.com.celeratti.model.EspecificacoesHardware;
-import br.com.celeratti.util.Maquina;
-import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.util.Conversor;
-
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -142,7 +134,6 @@ public class TelaLogin extends javax.swing.JFrame {
         String email = txtEmail.getText();
         String identificacao = txtIdentificacao.getText();
         String senha = String.valueOf(txtSenha.getPassword());
-        new CriacaoDeTabelas().CriarTabelas(new ConnectionFactory().getConnection());
         TelaInsercao tela = new TelaInsercao();
         this.dispose();
         tela.setVisible(true);

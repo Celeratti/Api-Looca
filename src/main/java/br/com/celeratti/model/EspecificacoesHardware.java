@@ -11,8 +11,8 @@ public class EspecificacoesHardware {
     private Long tamanhoDisco;
     private String processador;
     private Long cpuFrequencia;
-    private List ipv4;
-    private List ipv6;
+    private String ipv4;
+    private String ipv6;
 
     public EspecificacoesHardware(Looca looca) {
         this.memoriaTotal = looca.getMemoria().getTotal();
@@ -33,13 +33,25 @@ public class EspecificacoesHardware {
         List<RedeInterface> interfaces = looca.getRede().getGrupoDeInterfaces().getInterfaces();
         for (int i=0;i< interfaces.size();i++) {
             if (interfaces.get(i).getBytesEnviados() > 0){
-                this.ipv4 = interfaces.get(i).getEnderecoIpv4();
-                this.ipv6 = interfaces.get(i).getEnderecoIpv6();
+                this.ipv4 = interfaces.get(i).getEnderecoIpv4().get(0);
+                this.ipv6 = interfaces.get(i).getEnderecoIpv6().get(0);
             }
 
         }
     }
-    
+
+    public Long getCpuFrequencia() {
+        return cpuFrequencia;
+    }
+
+    public String getIpv4() {
+        return ipv4;
+    }
+
+    public String getIpv6() {
+        return ipv6;
+    }
+
     public String getProcessador() {
         return processador;
     }

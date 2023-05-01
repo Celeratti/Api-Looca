@@ -6,20 +6,22 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class ComponentesDAO {
 
     public void inserirDadosComponentes(Maquina maquina) {
-        String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoTempoDeTransferencia,cpuUtilizacao,dtInsercao, horaInsercao) VALUES (?,?,?,?,?);";
+        String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
+                "cpuUtilizacao,dataHoraInsercao, fkMaquina) VALUES (?,?,?,?,?);";
         try{
             PreparedStatement ps;
             ps = maquina.getCon().prepareStatement(sql);
             ps.setLong(1,maquina.getComponentes().getMemoriaEmUso());
-            ps.setLong(2,maquina.getComponentes().getDiscoTempoResposta());
+            ps.setDouble(2,maquina.getComponentes().getDiscoUso());
             ps.setDouble(3, maquina.getComponentes().getCpuUtilizacao());
-            ps.setDate(4,Date.valueOf(LocalDate.now()));
-            ps.setTime(5,Time.valueOf(LocalTime.now()));
+            ps.setObject(4, LocalDateTime.now());
+            ps.setInt(5,1);
             ps.execute();
             ps.close();
         }catch (SQLException e){

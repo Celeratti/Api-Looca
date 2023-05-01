@@ -1,25 +1,40 @@
 package br.com.celeratti.model;
 
 import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.util.Conversor;
+import com.github.britooo.looca.api.group.discos.Volume;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.util.List;
 
 public class Componentes {
     private Long memoriaEmUso;
-    private Long discoTempoResposta;
+    private Double discoUso;
     private Double cpuUtilizacao;
 
     public Componentes(Looca looca) {
         this.memoriaEmUso = looca.getMemoria().getEmUso();
-        this.discoTempoResposta = looca.getGrupoDeDiscos().getDiscos().get(0).getTempoDeTransferencia();
+        gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
     }
 
     public void capturar(Looca looca) {
         this.memoriaEmUso = looca.getMemoria().getEmUso();
-        this.discoTempoResposta = looca.getGrupoDeDiscos().getDiscos().get(0).getTempoDeTransferencia();
+        gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
+    }
+
+    private void gravarVolumes(Looca looca) {
+        List<Volume> volumes = looca.getGrupoDeDiscos().getVolumes();
+
+        Double tamanhoDisponivelVolumes = 0.0;
+        Double tamanhoTotalVolumes = 0.0;
+        for (int i = 0;i< volumes.size();i++){
+            tamanhoDisponivelVolumes += volumes.get(i).getDisponivel().doubleValue();
+            tamanhoTotalVolumes += volumes.get(i).getTotal().doubleValue();
+        }
+        this.discoUso =
+                ((tamanhoTotalVolumes - tamanhoDisponivelVolumes) / tamanhoTotalVolumes)*100;
     }
 
 
@@ -27,8 +42,8 @@ public class Componentes {
         return memoriaEmUso;
     }
 
-    public Long getDiscoTempoResposta() {
-        return discoTempoResposta;
+    public Double getDiscoUso() {
+        return discoUso;
     }
 
     public Double getCpuUtilizacao() {
@@ -38,7 +53,7 @@ public class Componentes {
     public String toString() {
         return "Componentes:" + "\n" +
                 "memoriaEmUso:" + memoriaEmUso + "\n" +
-                ", discoTempoResposta:" + discoTempoResposta + "\n" +
+                ", discoTempoResposta:" + discoUso + "\n" +
                 ", cpuUtilizacao:" + cpuUtilizacao;
     }
 }

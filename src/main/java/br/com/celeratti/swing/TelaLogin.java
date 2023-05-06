@@ -4,12 +4,15 @@
  */
 package br.com.celeratti.swing;
 
-import br.com.celeratti.domain.ConnectionFactory;
+import br.com.celeratti.dto.DadosMaquina;
+import br.com.celeratti.dto.DadosUsuario;
+import br.com.celeratti.model.EspecificacoesHardware;
+import br.com.celeratti.services.Services;
+import br.com.celeratti.util.Maquina;
+import com.github.britooo.looca.api.core.Looca;
 
-/**
- *
- * @author Rayssa Matsui
- */
+import javax.swing.*;
+
 public class TelaLogin extends javax.swing.JFrame {
     /**
      * Creates new form TelaLogin
@@ -133,11 +136,39 @@ public class TelaLogin extends javax.swing.JFrame {
     private void buttonLogarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogarActionPerformed
         String email = txtEmail.getText();
         String identificacao = txtIdentificacao.getText();
-        String senha = String.valueOf(txtSenha.getPassword());
-        TelaInsercao tela = new TelaInsercao();
-        this.dispose();
-        tela.setVisible(true);
-        
+        char[] passwd = txtSenha.getPassword();
+        String senha = new String(passwd);
+        Services services = new Services();
+        DadosUsuario dadosUsuario = services.verificarLogin(email,senha);
+        if (dadosUsuario == null){
+            JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
+            txtEmail.setText("");
+            txtSenha.setText("");
+        }else{
+            if (dadosUsuario.email().equals(email) && dadosUsuario.senha().equals(senha)){
+                DadosMaquina dadosMaquina = services.verificarMaquina(identificacao);
+                if (dadosMaquina.id() != null) {
+                    if (dadosMaquina.fkEmpresa() == dadosUsuario.fkEmpresa()){
+                        if (dadosMaquina.status() == 0){
+                            services.inserirEspecs(new EspecificacoesHardware(new Looca(),dadosMaquina.id()));
+                        }
+                        TelaInsercao tela = new TelaInsercao();
+                        tela.setMaq(dadosMaquina);
+                        this.dispose();
+                        tela.setVisible(true);
+                        }else{
+                            JOptionPane.showMessageDialog(this,"Você não tem autorização para acessar esta máquina");
+                        }
+
+                }else{
+                    JOptionPane.showMessageDialog(this,"Máquina inexistente");
+                }
+            }else{
+                JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
+                txtEmail.setText("");
+                txtSenha.setText("");
+            }
+        }
     }//GEN-LAST:event_buttonLogarActionPerformed
 
     
@@ -183,5 +214,4 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtIdentificacao;
     private javax.swing.JPasswordField txtSenha;
     // End of variables declaration//GEN-END:variables
-
 }

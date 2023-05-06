@@ -13,13 +13,16 @@ public class EspecificacoesHardware {
     private Long cpuFrequencia;
     private String ipv4;
     private String ipv6;
+    private Long fkMaquina;
 
-    public EspecificacoesHardware(Looca looca) {
+    public EspecificacoesHardware(Looca looca,Long fkMaquina) {
         this.memoriaTotal = looca.getMemoria().getTotal();
         this.tamanhoDisco = looca.getGrupoDeDiscos().getTamanhoTotal();
         this.processador = looca.getProcessador().getNome();
         this.cpuFrequencia = looca.getProcessador().getFrequencia();
+        this.fkMaquina = fkMaquina;
         gravarRede(looca);
+
     }
 
     public Long getMemoriaTotal() {
@@ -50,6 +53,10 @@ public class EspecificacoesHardware {
 
     public String getIpv6() {
         return ipv6;
+    }
+
+    public Long getFkMaquina() {
+        return fkMaquina;
     }
 
     public String getProcessador() {

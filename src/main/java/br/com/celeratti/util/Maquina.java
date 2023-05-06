@@ -9,16 +9,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import java.sql.Connection;
 
 public class Maquina {
+    private Long id;
     private Componentes componentes;
     private Looca looca;
     private Connection con;
     private Services services;
 
-    public Maquina() {
+
+    public Maquina(Long idMaquina) {
         this.looca = new Looca();
         this.componentes = new Componentes(looca);
         this.con = new ConnectionFactory().getConnection();
         this.services = new Services();
+        this.id = idMaquina;
     }
 
 
@@ -36,5 +39,9 @@ public class Maquina {
 
     public Services getServices() {
         return services;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

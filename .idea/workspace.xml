@@ -12,7 +12,30 @@
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/Arrow 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/CELERATTI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +47,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -65,7 +89,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.JavaFX",
@@ -75,6 +99,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.celeratti.dto" />
+      <recent name="br.com.celeratti.dao" />
       <recent name="br.com.celeratti.services" />
     </key>
   </component>
@@ -205,6 +231,7 @@
       <workItem from="1682775911849" duration="1427000" />
       <workItem from="1682905844170" duration="6516000" />
       <workItem from="1682957714021" duration="8647000" />
+      <workItem from="1683400155889" duration="15271000" />
     </task>
     <servers />
   </component>

@@ -8,18 +8,18 @@ import java.text.NumberFormat;
 import java.util.List;
 
 public class Componentes {
-    private Long memoriaEmUso;
+    private double memoriaEmUso;
     private Double discoUso;
     private Double cpuUtilizacao;
 
     public Componentes(Looca looca) {
-        this.memoriaEmUso = looca.getMemoria().getEmUso();
+        this.memoriaEmUso = ((double) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
         gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
     }
 
     public void capturar(Looca looca) {
-        this.memoriaEmUso = looca.getMemoria().getEmUso();
+        this.memoriaEmUso = ((double) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
         gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
     }
@@ -38,7 +38,7 @@ public class Componentes {
     }
 
 
-    public Long getMemoriaEmUso() {
+    public double getMemoriaEmUso() {
         return memoriaEmUso;
     }
 

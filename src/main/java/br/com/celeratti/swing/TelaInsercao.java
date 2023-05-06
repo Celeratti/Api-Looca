@@ -4,6 +4,7 @@
  */
 package br.com.celeratti.swing;
 
+import br.com.celeratti.dto.DadosMaquina;
 import br.com.celeratti.util.Maquina;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -101,10 +102,13 @@ public class TelaInsercao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void setMaq(DadosMaquina dados){
+        maq = new Maquina(dados.id());
+    }
+
     public void inserir() {
-        Maquina maquina = new Maquina();
-        maquina.getComponentes().capturar(maquina.getLooca());
-        maquina.getServices().enviarProBanco(maquina);
+        maq.getComponentes().capturar(maq.getLooca());
+        maq.getServices().enviarProBanco(maq);
         lblInsercao.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
     }
     
@@ -116,7 +120,6 @@ public class TelaInsercao extends javax.swing.JFrame {
             inserir();
            }
        },0,60000);
-        
     }//GEN-LAST:event_btnIniciarActionPerformed
 
     private void btnPararActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPararActionPerformed
@@ -179,5 +182,6 @@ public class TelaInsercao extends javax.swing.JFrame {
     private javax.swing.JButton btnParar;
     private javax.swing.JLabel lblInsercao;
     private javax.swing.JLabel lblUltima;
+    private Maquina maq;
     // End of variables declaration//GEN-END:variables
 }

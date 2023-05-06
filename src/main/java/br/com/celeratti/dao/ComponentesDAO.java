@@ -17,11 +17,11 @@ public class ComponentesDAO {
         try{
             PreparedStatement ps;
             ps = maquina.getCon().prepareStatement(sql);
-            ps.setLong(1,maquina.getComponentes().getMemoriaEmUso());
+            ps.setDouble(1,maquina.getComponentes().getMemoriaEmUso());
             ps.setDouble(2,maquina.getComponentes().getDiscoUso());
             ps.setDouble(3, maquina.getComponentes().getCpuUtilizacao());
             ps.setObject(4, LocalDateTime.now());
-            ps.setInt(5,1);
+            ps.setLong(5,maquina.getId());
             ps.execute();
             ps.close();
         }catch (SQLException e){

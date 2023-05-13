@@ -1,13 +1,9 @@
 package br.com.celeratti.dao;
 
-import br.com.celeratti.model.Componentes;
 import br.com.celeratti.util.Maquina;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 public class ComponentesDAO {
 
@@ -24,6 +20,16 @@ public class ComponentesDAO {
             ps.setLong(5,maquina.getId());
             ps.execute();
             ps.close();
+//            PreparedStatement ps2;
+//            ps2 = maquina.getConAzure().prepareStatement(sql);
+//            ps2.setDouble(1,maquina.getComponentes().getMemoriaEmUso());
+//            ps2.setDouble(2,maquina.getComponentes().getDiscoUso());
+//            ps2.setDouble(3, maquina.getComponentes().getCpuUtilizacao());
+//            ps2.setObject(4, LocalDateTime.now());
+//            ps2.setLong(5,maquina.getId());
+//            ps2.execute();
+//            ps2.close();
+//            ps.close();
         }catch (SQLException e){
             throw new RuntimeException(e);
         }

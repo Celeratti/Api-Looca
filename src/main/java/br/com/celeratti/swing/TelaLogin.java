@@ -19,6 +19,7 @@ public class TelaLogin extends javax.swing.JFrame {
      */
     public TelaLogin() {
         initComponents();
+        maquina = new Maquina();
     }
 
     @SuppressWarnings("unchecked")
@@ -138,22 +139,24 @@ public class TelaLogin extends javax.swing.JFrame {
         String identificacao = txtIdentificacao.getText();
         char[] passwd = txtSenha.getPassword();
         String senha = new String(passwd);
-        Services services = new Services();
-        DadosUsuario dadosUsuario = services.verificarLogin(email,senha);
+        DadosUsuario dadosUsuario = maquina.getServices().verificarLogin(email,senha);
         if (dadosUsuario == null){
             JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
             txtEmail.setText("");
             txtSenha.setText("");
         }else{
             if (dadosUsuario.email().equals(email) && dadosUsuario.senha().equals(senha)){
-                DadosMaquina dadosMaquina = services.verificarMaquina(identificacao);
+                try{
+                    DadosMaquina dadosMaquina = maquina.getServices().verificarMaquina(identificacao);
                 if (dadosMaquina.id() != null) {
                     if (dadosMaquina.fkEmpresa() == dadosUsuario.fkEmpresa()){
                         if (dadosMaquina.status() == 0){
-                            services.inserirEspecs(new EspecificacoesHardware(new Looca(),dadosMaquina.id()));
+                            maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
+                                    dadosMaquina.id()));
                         }
                         TelaInsercao tela = new TelaInsercao();
-                        tela.setMaq(dadosMaquina);
+                        maquina.setId(dadosMaquina.id());
+                        tela.setMaq(maquina);
                         this.dispose();
                         tela.setVisible(true);
                         }else{
@@ -162,6 +165,9 @@ public class TelaLogin extends javax.swing.JFrame {
 
                 }else{
                     JOptionPane.showMessageDialog(this,"Máquina inexistente");
+                }
+                } catch (NullPointerException n){
+                    JOptionPane.showMessageDialog(this,"Máquina inexistente!");
                 }
             }else{
                 JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
@@ -213,5 +219,6 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JTextField txtEmail;
     private javax.swing.JTextField txtIdentificacao;
     private javax.swing.JPasswordField txtSenha;
+    private Maquina maquina;
     // End of variables declaration//GEN-END:variables
 }

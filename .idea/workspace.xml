@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Api-Looca:jar" />
+      <artifact name="aplicacao-java:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,26 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Api_Looca_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_Looca_jar/Api-Looca.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/EspecificacoesHardware.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/Arrow 1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/CELERATTI.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/EspecificacoesHardware.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" afterDir="false" />
@@ -75,28 +73,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_directory_selection": "C:/Users/gabri/IdeaProjects/Api-Looca/src/main/java/br/com/celeratti",
-    "last_opened_file_path": "C:/Users/gabri/IdeaProjects/byte-bank-alura-curso_jdbc_inicio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
-    "spring.configuration.checksum": "21de6f9f28cdcbd66581fa0a80a69928",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/gabri/IdeaProjects/Api-Looca/src/main/java/br/com/celeratti&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gabri/IdeaProjects/byte-bank-alura-curso_jdbc_inicio&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.JavaFX&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3ad1bd14d0d1a43c08d738d549782a1b&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="br.com.celeratti.dto" />
@@ -107,14 +105,14 @@
   <component name="RunManager" selected="Application.br.com.celeratti.swing.TelaLogin">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
-      <module name="Api-Looca" />
+      <module name="aplicacao-java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="TelaLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sptech.tela.login.swing.TelaLogin" />
-      <module name="Api-Looca" />
+      <module name="aplicacao-java" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="sptech.tela.login.swing.*" />
@@ -127,7 +125,7 @@
     </configuration>
     <configuration name="br.com.celeratti.swing.TelaLogin (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.celeratti.swing.TelaLogin" />
-      <module name="Api-Looca" />
+      <module name="aplicacao-java" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.celeratti.swing.*" />
@@ -140,7 +138,7 @@
     </configuration>
     <configuration name="br.com.celeratti.swing.TelaLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.celeratti.swing.TelaLogin" />
-      <module name="Api-Looca" />
+      <module name="aplicacao-java" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.com.celeratti.swing.*" />
@@ -231,7 +229,18 @@
       <workItem from="1682775911849" duration="1427000" />
       <workItem from="1682905844170" duration="6516000" />
       <workItem from="1682957714021" duration="8647000" />
-      <workItem from="1683400155889" duration="15271000" />
+      <workItem from="1683400155889" duration="16177000" />
+      <workItem from="1683473995523" duration="4543000" />
+      <workItem from="1683638834711" duration="310000" />
+      <workItem from="1683667099024" duration="769000" />
+      <workItem from="1683668004296" duration="427000" />
+      <workItem from="1683674719916" duration="1193000" />
+      <workItem from="1683748135374" duration="125000" />
+      <workItem from="1683837480682" duration="182000" />
+      <workItem from="1683841233106" duration="1777000" />
+      <workItem from="1683922471348" duration="2639000" />
+      <workItem from="1683948729873" duration="779000" />
+      <workItem from="1684016698782" duration="1179000" />
     </task>
     <servers />
   </component>

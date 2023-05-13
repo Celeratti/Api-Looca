@@ -1,6 +1,4 @@
 package br.com.celeratti.domain;
-import org.apache.commons.dbcp2.BasicDataSource;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,14 +7,33 @@ import java.sql.SQLException;
 public class ConnectionFactory {
 
 
-    public Connection getConnection() {
-        try{
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/mydb","root","root");
-            return con;
-        } catch (SQLException e){
-            throw new RuntimeException(e);
-        }
+//    public Connection getConnection() {
+//        try{
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false","root",
+//                    "urubu100");
+//            return con;
+//        } catch (SQLException e){
+//            throw new RuntimeException(e);
+//        }
+//    }
+public Connection getConnection() {
+    try{
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti","root",
+                "root");
+        return con;
+    } catch (SQLException e){
+        throw new RuntimeException(e);
     }
+}
+//
+//    public Connection getConnectionAzure() {
+//        try{
+//            Connection con = DriverManager.getConnection("jdbc:sqlserver://server-celeratti.database.windows.net:1433;database=celeratti;user=admin-celeratti@server-celeratti;password=#Gfgrupo7;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
+//            return con;
+//        }catch (SQLException e){
+//            throw new RuntimeException(e);
+//        }
+//    }
 
 
 

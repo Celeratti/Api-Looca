@@ -13,6 +13,7 @@ public class Maquina {
     private Componentes componentes;
     private Looca looca;
     private Connection con;
+    private Connection conAzure;
     private Services services;
 
 
@@ -24,6 +25,13 @@ public class Maquina {
         this.id = idMaquina;
     }
 
+    public Maquina() {
+        this.looca = new Looca();
+        this.componentes = new Componentes(looca);
+        this.con = new ConnectionFactory().getConnection();
+        this.conAzure = new ConnectionFactory().getConnection();
+        this.services = new Services();
+    }
 
     public Componentes getComponentes() {
         return componentes;
@@ -36,6 +44,9 @@ public class Maquina {
     public Connection getCon() {
         return con;
     }
+    public Connection getConAzure() {
+        return conAzure;
+    }
 
     public Services getServices() {
         return services;
@@ -43,5 +54,9 @@ public class Maquina {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -3,16 +3,18 @@ package br.com.celeratti.dao;
 import br.com.celeratti.domain.ConnectionFactory;
 import br.com.celeratti.dto.DadosMaquina;
 import br.com.celeratti.model.EspecificacoesHardware;
-
-import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class MaquinaDao {
-    private Connection con;
 
+    private final Connection con;
+
+//    public MaquinaDao() {
+//        this.con = new ConnectionFactory().getConnectionAzure();
+//    }
     public MaquinaDao() {
         this.con = new ConnectionFactory().getConnection();
     }
@@ -33,7 +35,6 @@ public class MaquinaDao {
             }
             rs.close();
             ps.close();
-            con.close();
         } catch (SQLException e){
             throw new RuntimeException(e);
         }
@@ -59,7 +60,6 @@ public class MaquinaDao {
             ps2.execute();
             ps.close();
             ps2.close();
-            con.close();
         } catch (SQLException e){
             throw new RuntimeException(e);
         }

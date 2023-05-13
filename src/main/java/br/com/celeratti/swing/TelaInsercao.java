@@ -102,8 +102,8 @@ public class TelaInsercao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public void setMaq(DadosMaquina dados){
-        maq = new Maquina(dados.id());
+    public void setMaq(Maquina maquina){
+        maq = maquina;
     }
 
     public void inserir() {

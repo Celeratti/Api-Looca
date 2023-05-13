@@ -16,6 +16,9 @@ import java.util.List;
 public class LoginDao {
     private Connection con;
 
+//    public LoginDao() {
+//        this.con = new ConnectionFactory().getConnectionAzure();
+//    }
     public LoginDao() {
         this.con = new ConnectionFactory().getConnection();
     }

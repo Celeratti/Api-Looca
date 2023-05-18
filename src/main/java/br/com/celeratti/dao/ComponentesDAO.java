@@ -20,16 +20,24 @@ public class ComponentesDAO {
             ps.setLong(5,maquina.getId());
             ps.execute();
             ps.close();
-//            PreparedStatement ps2;
-//            ps2 = maquina.getConAzure().prepareStatement(sql);
-//            ps2.setDouble(1,maquina.getComponentes().getMemoriaEmUso());
-//            ps2.setDouble(2,maquina.getComponentes().getDiscoUso());
-//            ps2.setDouble(3, maquina.getComponentes().getCpuUtilizacao());
-//            ps2.setObject(4, LocalDateTime.now());
-//            ps2.setLong(5,maquina.getId());
-//            ps2.execute();
-//            ps2.close();
-//            ps.close();
+            System.out.println("ID Maquina" + maquina.getId() +
+                    "Memória em uso: " + maquina.getComponentes().getMemoriaEmUso() +
+                    "Uso de disco: " +
+                    maquina.getComponentes().getDiscoUso() +
+                    "Utilização de CPU: " +
+                    maquina.getComponentes().getCpuUtilizacao() +
+                    "Momento captura: " +
+                    Timestamp.valueOf(LocalDateTime.now()) );
+            PreparedStatement ps2;
+            ps2 = maquina.getConAzure().prepareStatement(sql);
+            ps2.setFloat(1, maquina.getComponentes().getMemoriaEmUso());
+            ps2.setFloat(2, maquina.getComponentes().getDiscoUso());
+            ps2.setInt(3, maquina.getComponentes().getCpuUtilizacao().intValue());
+            ps2.setTimestamp(4, Timestamp.valueOf(LocalDateTime.now()));
+            ps2.setInt(5,maquina.getId().intValue());
+            ps2.execute();
+            ps2.close();
+            ps.close();
         }catch (SQLException e){
             throw new RuntimeException(e);
         }

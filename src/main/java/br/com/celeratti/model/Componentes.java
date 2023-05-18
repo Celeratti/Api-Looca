@@ -3,23 +3,21 @@ package br.com.celeratti.model;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Volume;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.util.List;
 
 public class Componentes {
-    private double memoriaEmUso;
-    private Double discoUso;
+    private float memoriaEmUso;
+    private float discoUso;
     private Double cpuUtilizacao;
 
     public Componentes(Looca looca) {
-        this.memoriaEmUso = ((double) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
+        this.memoriaEmUso = ((float) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
         gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
     }
 
     public void capturar(Looca looca) {
-        this.memoriaEmUso = ((double) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
+        this.memoriaEmUso = ((float) looca.getMemoria().getEmUso() / looca.getMemoria().getTotal())*100;
         gravarVolumes(looca);
         this.cpuUtilizacao = looca.getProcessador().getUso();
     }
@@ -33,16 +31,16 @@ public class Componentes {
             tamanhoDisponivelVolumes += volumes.get(i).getDisponivel().doubleValue();
             tamanhoTotalVolumes += volumes.get(i).getTotal().doubleValue();
         }
-        this.discoUso =
+        this.discoUso = (float)
                 ((tamanhoTotalVolumes - tamanhoDisponivelVolumes) / tamanhoTotalVolumes)*100;
     }
 
 
-    public double getMemoriaEmUso() {
+    public float getMemoriaEmUso() {
         return memoriaEmUso;
     }
 
-    public Double getDiscoUso() {
+    public float getDiscoUso() {
         return discoUso;
     }
 

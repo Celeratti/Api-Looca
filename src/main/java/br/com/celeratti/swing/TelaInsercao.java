@@ -107,9 +107,13 @@ public class TelaInsercao extends javax.swing.JFrame {
     }
 
     public void inserir() {
-        maq.getComponentes().capturar(maq.getLooca());
-        maq.getServices().enviarProBanco(maq);
-        lblInsercao.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        if(maq.getServices().verificarConexao()){
+            maq.getComponentes().capturar(maq.getLooca());
+            maq.getServices().enviarProBanco(maq);
+            lblInsercao.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+        }else{
+            maq.getServices().reiniciar();
+        }
     }
     
     private void btnIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarActionPerformed

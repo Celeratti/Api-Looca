@@ -16,20 +16,21 @@ public class Maquina {
     private Connection conAzure;
     private Services services;
 
-
-    public Maquina(Long idMaquina) {
-        this.looca = new Looca();
-        this.componentes = new Componentes(looca);
-        this.con = new ConnectionFactory().getConnection();
-        this.services = new Services();
-        this.id = idMaquina;
-    }
+//
+//    public Maquina(Long idMaquina) {
+//        this.looca = new Looca();
+//        this.componentes = new Componentes(looca);
+//        this.con = new ConnectionFactory().getConnection();
+//        this.conAzure = new ConnectionFactory().getConnectionAzure();
+//        this.services = new Services();
+//        this.id = idMaquina;
+//    }
 
     public Maquina() {
         this.looca = new Looca();
         this.componentes = new Componentes(looca);
         this.con = new ConnectionFactory().getConnection();
-        this.conAzure = new ConnectionFactory().getConnection();
+        this.conAzure = new ConnectionFactory().getConnectionAzure();
         this.services = new Services();
     }
 

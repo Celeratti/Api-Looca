@@ -8,6 +8,8 @@ import br.com.celeratti.dto.DadosUsuario;
 import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.util.Maquina;
 
+import java.io.IOException;
+
 
 public class Services {
     private MaquinaDao maquinaDao;
@@ -35,5 +37,37 @@ public class Services {
 
     public void inserirEspecs(EspecificacoesHardware especificacoesHardware) {
         maquinaDao.enviarEspecsProBanco(especificacoesHardware);
+    }
+
+    public boolean verificarConexao() {
+        String ipAddress = "www.google.com";
+        try {
+            Process process = Runtime.getRuntime().exec("ping " + ipAddress);
+            int exitCode = process.waitFor();
+            if (exitCode == 0) {
+                return true;
+            }
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public void reiniciar() {
+        String comando;
+        String sistemaOperacional = System.getProperty("os.name").toLowerCase();
+        try {
+            if (sistemaOperacional.contains("win")) {
+                comando = "shutdown /r /t 0"; // Comando para reiniciar no Windows
+            } else if (sistemaOperacional.contains("nix") || sistemaOperacional.contains("nux")
+                    || sistemaOperacional.contains("mac")) {
+                comando = "sudo shutdown -r now"; // Comando para reiniciar no Linux/Unix/Mac
+            } else {
+                throw new UnsupportedOperationException("Sistema operacional não suportado para reiniciar o computador.");
+            }
+            Runtime.getRuntime().exec(comando);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

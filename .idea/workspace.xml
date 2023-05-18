@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Api_Looca_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Api_Looca_jar/Api-Looca.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/aplicacao_java_jar/aplicacao-java.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaInsercao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" afterDir="false" />
@@ -27,12 +26,11 @@
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/model/Componentes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaInsercao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -240,7 +238,14 @@
       <workItem from="1683841233106" duration="1777000" />
       <workItem from="1683922471348" duration="2639000" />
       <workItem from="1683948729873" duration="779000" />
-      <workItem from="1684016698782" duration="1179000" />
+      <workItem from="1684016698782" duration="2356000" />
+      <workItem from="1684183345708" duration="445000" />
+      <workItem from="1684279206630" duration="416000" />
+      <workItem from="1684280890871" duration="1891000" />
+      <workItem from="1684353476205" duration="656000" />
+      <workItem from="1684381147302" duration="345000" />
+      <workItem from="1684381850607" duration="4342000" />
+      <workItem from="1684419429047" duration="501000" />
     </task>
     <servers />
   </component>

@@ -148,7 +148,7 @@ public class TelaLogin extends javax.swing.JFrame {
             if (dadosUsuario.email().equals(email) && dadosUsuario.senha().equals(senha)){
                 try{
                     DadosMaquina dadosMaquina = maquina.getServices().verificarMaquina(identificacao);
-                if (dadosMaquina.id() != null) {
+                if (!(dadosMaquina.id() == null)) {
                     if (dadosMaquina.fkEmpresa() == dadosUsuario.fkEmpresa()){
                         if (dadosMaquina.status() == 0){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),

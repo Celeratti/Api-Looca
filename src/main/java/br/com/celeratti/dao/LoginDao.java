@@ -2,9 +2,6 @@ package br.com.celeratti.dao;
 
 import br.com.celeratti.domain.ConnectionFactory;
 import br.com.celeratti.dto.DadosUsuario;
-import br.com.celeratti.model.Usuario;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 
 import java.sql.Connection;

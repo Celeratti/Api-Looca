@@ -12,12 +12,13 @@ public class MaquinaDao {
 
     private final Connection con;
 
-//    public MaquinaDao() {
-//        this.con = new ConnectionFactory().getConnectionAzure();
-//    }
     public MaquinaDao() {
-        this.con = new ConnectionFactory().getConnection();
+        this.con = new ConnectionFactory().getConnectionAzure();
     }
+
+//    public MaquinaDao() {
+//        this.con = new ConnectionFactory().getConnection();
+//    }
 
     public DadosMaquina buscarMaquina(String identificacao) {
         DadosMaquina dados = null;

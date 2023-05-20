@@ -9,6 +9,8 @@ import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.util.Maquina;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Services {
@@ -24,7 +26,11 @@ public class Services {
 
     //Envia os dados dos componenetes para a classe DAO e insere no banco
     public void enviarProBanco(Maquina maquina){
-        componentesDAO.inserirDadosComponentes(maquina);
+        try {
+            componentesDAO.inserirDadosComponentes(maquina);
+        } catch (IOException ex) {
+            Logger.getLogger(Services.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public DadosUsuario verificarLogin(String email, String senha) {

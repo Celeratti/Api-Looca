@@ -10,7 +10,7 @@ public class ConnectionFactory {
     public Connection getConnection() {
         try{
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false","root",
-                    "urubu100");
+                    "pinguim");
             return con;
         } catch (SQLException e){
             throw new RuntimeException(e);

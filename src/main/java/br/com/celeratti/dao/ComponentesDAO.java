@@ -1,13 +1,22 @@
 package br.com.celeratti.dao;
 
 import br.com.celeratti.util.Maquina;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ComponentesDAO {
 
-    public void inserirDadosComponentes(Maquina maquina) {
+    public void inserirDadosComponentes(Maquina maquina) throws IOException {
         String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
                 "cpuUtilizacao,dataHoraInsercao, fkMaquina) VALUES (?,?,?,?,?);";
         try{
@@ -38,6 +47,18 @@ public class ComponentesDAO {
             ps2.execute();
             ps2.close();
             ps.close();
+            
+            File arquivo = new File("logINFO" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+     + ".txt");
+
+        if (!arquivo.exists()) {
+           arquivo.createNewFile();
+        }
+
+        List<String> lista = new ArrayList<>();
+        lista.add("A máquina do usuário: " + System.getProperty("user.home") + " fez uma inserção  de dados neste momento: "
+          + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+        Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }

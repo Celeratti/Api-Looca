@@ -4,12 +4,16 @@
  */
 package br.com.celeratti.swing;
 
+import br.com.celeratti.dao.SendMessage;
 import br.com.celeratti.dto.DadosMaquina;
 import br.com.celeratti.dto.DadosUsuario;
 import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.services.Services;
 import br.com.celeratti.util.Maquina;
 import com.github.britooo.looca.api.core.Looca;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.*;
 
@@ -153,6 +157,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         if (dadosMaquina.status() == 0){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
                                     dadosMaquina.id()));
+      
                         }
                         TelaInsercao tela = new TelaInsercao();
                         maquina.setId(dadosMaquina.id());

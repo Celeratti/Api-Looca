@@ -3,10 +3,14 @@ package br.com.celeratti.dao;
 import br.com.celeratti.domain.ConnectionFactory;
 import br.com.celeratti.dto.DadosMaquina;
 import br.com.celeratti.model.EspecificacoesHardware;
+import br.com.celeratti.swing.TelaLogin;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MaquinaDao {
 
@@ -34,6 +38,9 @@ public class MaquinaDao {
                 int fkEmpresa = rs.getInt(4);
                 dados = new DadosMaquina(id,nomeIdentificador,status,fkEmpresa);
             }
+            
+            
+            
             rs.close();
             ps.close();
         } catch (SQLException e){
@@ -43,7 +50,7 @@ public class MaquinaDao {
     }
 
     public void enviarEspecsProBanco(EspecificacoesHardware especificacoesHardware) {
-        String sql = "INSERT INTO especificacoesHardware(memoriaTotal,tamanhoDisco,processador,cpuTotal,ipv4,ipv6,fkMaquina) VALUES (?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO especificacoesHardware(memoriaTotal, tamanhoDisco, processador, cpuTotal, ipv4, ipv6, fkMaquina) VALUES (?,?,?,?,?,?,?)";
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setDouble(1, Double.parseDouble(especificacoesHardware.getMemoriaTotal().toString()));
@@ -61,6 +68,19 @@ public class MaquinaDao {
             ps2.execute();
             ps.close();
             ps2.close();
+            
+            
+            SendMessage teste = new SendMessage();
+                   
+            try {
+               double memoriaTotal = (double) especificacoesHardware.getMemoriaTotal() / (1024 * 1024 * 1024);                
+                teste.sendMessage(String.format("Máquina adicionada\n"+ "Memória total: %f.2", memoriaTotal));
+                
+            } catch (IOException ex) {
+                Logger.getLogger(MaquinaDao.class.getName()).log(Level.SEVERE, null, ex);
+            }
+                             
+            
         } catch (SQLException e){
             throw new RuntimeException(e);
         }

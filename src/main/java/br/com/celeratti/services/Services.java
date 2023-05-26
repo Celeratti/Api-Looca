@@ -34,7 +34,7 @@ public class Services {
     }
 
     public DadosUsuario verificarLogin(String email, String senha) {
-        return new LoginDao().buscarUsuarios(email,senha);
+        return loginDao.buscarUsuarios(email,senha);
     }
 
     public DadosMaquina verificarMaquina(String identificacao) {
@@ -46,7 +46,7 @@ public class Services {
     }
 
     public boolean verificarConexao() {
-        String ipAddress = "www.google.com";
+        String ipAddress = "https://spring-azure--demo.azurewebsites.net";
         try {
             Process process = Runtime.getRuntime().exec("ping " + ipAddress);
             int exitCode = process.waitFor();

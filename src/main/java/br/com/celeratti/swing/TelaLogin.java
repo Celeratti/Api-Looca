@@ -154,7 +154,7 @@ public class TelaLogin extends javax.swing.JFrame {
                     DadosMaquina dadosMaquina = maquina.getServices().verificarMaquina(identificacao);
                 if (!(dadosMaquina.id() == null)) {
                     if (dadosMaquina.fkEmpresa() == dadosUsuario.fkEmpresa()){
-                        if (dadosMaquina.status() == 0){
+                        if (dadosMaquina.status().equals("DESATIVADO")){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
                                     dadosMaquina.id()));
       

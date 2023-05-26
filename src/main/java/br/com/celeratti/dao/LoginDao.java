@@ -8,17 +8,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
 public class LoginDao {
     private Connection con;
 
-//    public LoginDao() {
-//        this.con = new ConnectionFactory().getConnectionAzure();
-//    }
     public LoginDao() {
-        this.con = new ConnectionFactory().getConnection();
+        this.con = new ConnectionFactory().getConnectionAzure();
     }
+//    public LoginDao() {
+//        this.con = new ConnectionFactory().getConnection();
+//    }
 
     //    Busca usuários com os dados que foram digitados na tela de login
     public DadosUsuario buscarUsuarios(String email, String senha) {

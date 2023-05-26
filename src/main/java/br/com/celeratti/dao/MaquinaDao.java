@@ -26,7 +26,7 @@ public class MaquinaDao {
 
     public DadosMaquina buscarMaquina(String identificacao) {
         DadosMaquina dados = null;
-        String sql = "SELECT id,nomeIdentificador,status,fkempresa from maquina WHERE nomeIdentificador = ?;";
+        String sql = "SELECT m.id,m.nomeIdentificador,s.status,m.fkempresa from maquina as m JOIN status as s on m.fkStatus = s.id WHERE nomeIdentificador = ?;";
         try{
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1,identificacao);
@@ -34,13 +34,10 @@ public class MaquinaDao {
             while(rs.next()){
                 Long id = rs.getLong(1);
                 String nomeIdentificador = rs.getString(2);
-                int status = rs.getInt(3);
+                String status = rs.getString(3);
                 int fkEmpresa = rs.getInt(4);
                 dados = new DadosMaquina(id,nomeIdentificador,status,fkEmpresa);
             }
-            
-            
-            
             rs.close();
             ps.close();
         } catch (SQLException e){
@@ -62,7 +59,7 @@ public class MaquinaDao {
             ps.setLong(7,especificacoesHardware.getFkMaquina());
             ps.execute();
 
-            String update = "UPDATE maquina SET status = 1 WHERE id = ?";
+            String update = "UPDATE maquina SET fkStatus = 1 WHERE id = ?";
             PreparedStatement ps2 = con.prepareStatement(update);
             ps2.setLong(1,especificacoesHardware.getFkMaquina());
             ps2.execute();

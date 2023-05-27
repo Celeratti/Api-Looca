@@ -1,6 +1,8 @@
 package br.com.celeratti.dao;
 
 import br.com.celeratti.util.Maquina;
+
+import javax.xml.transform.Result;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,7 +27,7 @@ public class ComponentesDAO {
             ps.setDouble(1,maquina.getComponentes().getMemoriaEmUso());
             ps.setDouble(2,maquina.getComponentes().getDiscoUso());
             ps.setDouble(3, maquina.getComponentes().getCpuUtilizacao());
-            ps.setInt(4, maquina.getComponentes().getLatencia());
+            ps.setDouble(4, maquina.getComponentes().getLatencia());
             ps.setObject(5, LocalDateTime.now());
             ps.execute();
             ps.close();
@@ -44,7 +46,7 @@ public class ComponentesDAO {
             ps2.setFloat(1, maquina.getComponentes().getMemoriaEmUso());
             ps2.setFloat(2, maquina.getComponentes().getDiscoUso());
             ps2.setInt(3, maquina.getComponentes().getCpuUtilizacao().intValue());
-            ps2.setInt(4, maquina.getComponentes().getLatencia());
+            ps2.setDouble(4, maquina.getComponentes().getLatencia());
             ps2.setTimestamp(5, Timestamp.valueOf(LocalDateTime.now()));
             ps2.setInt(6,maquina.getId().intValue());
             ps2.execute();
@@ -133,11 +135,22 @@ public class ComponentesDAO {
         if (!arquivo.exists()) {
            arquivo.createNewFile();
         }
+        try {
+            PreparedStatement ps = maquina.getConAzure().prepareStatement("SELECT nomeIdentificador FROM maquina WHERE id = ?");
+            ResultSet rs = ps.executeQuery();
+            String nomeIdentificador = "";
+            while(rs.next()){
+                nomeIdentificador = rs.getString("nomeIdentificador");
+            }
+            List<String> lista = new ArrayList<>();
 
-        List<String> lista = new ArrayList<>();
-        lista.add("A máquina do usuário: " + System.getProperty("user.home") + " fez uma inserção  de dados neste momento: "
-          + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
-        Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
+            lista.add("A máquina: " + nomeIdentificador + " fez uma inserção  de dados neste momento: "
+                    + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+            Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+
 
     }
 }

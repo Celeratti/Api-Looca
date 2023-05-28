@@ -1,7 +1,6 @@
 package br.com.celeratti.dao;
 
 import br.com.celeratti.util.Maquina;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

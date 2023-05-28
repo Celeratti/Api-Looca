@@ -36,31 +36,12 @@ public class Componentes {
         try {
             String url = "https://spring-azure--demo.azurewebsites.net/home/conexao";
             long startTime = System.nanoTime();
-
             // Criar conexão HTTP
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
-
-            // Obter a resposta da requisição
-            int responseCode = connection.getResponseCode();
-
-            // Ler o corpo da resposta (opcional)
-            BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            String line;
-            StringBuilder responseBody = new StringBuilder();
-            while ((line = reader.readLine()) != null) {
-                responseBody.append(line);
-            }
-            reader.close();
-
             long endTime = System.nanoTime();
-
-            if (responseCode == HttpURLConnection.HTTP_OK) {
-                long latencyNs = endTime - startTime;
-                this.latencia =  (double) latencyNs / 1_000_000; // Convertendo para milissegundos
-            } else {
-                System.out.println("Erro na requisição: " + responseCode);
-            }
+            long latencyNs = endTime - startTime;
+            this.latencia =  (double) latencyNs / 1_000_000; // Convertendo para milissegundos
             connection.disconnect();
         } catch (IOException e) {
             e.printStackTrace();

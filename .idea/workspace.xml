@@ -11,11 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/aplicacao_java_jar/aplicacao-java.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/model/Componentes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +233,10 @@
       <workItem from="1685045677164" duration="69000" />
       <workItem from="1685045785189" duration="1985000" />
       <workItem from="1685101935847" duration="14266000" />
-      <workItem from="1685157004416" duration="1686000" />
+      <workItem from="1685157004416" duration="1987000" />
+      <workItem from="1685213981606" duration="495000" />
+      <workItem from="1685229575207" duration="262000" />
+      <workItem from="1685234578947" duration="1543000" />
     </task>
     <servers />
   </component>

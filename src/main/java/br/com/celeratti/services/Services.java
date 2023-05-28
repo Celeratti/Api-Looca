@@ -69,7 +69,7 @@ public class Services {
 
     public void reiniciar() {
         try {
-            String comando = "sudo shutdown -r now"; // Comando para reiniciar no Linux/Unix/Mac
+            String comando = "sudo shutdown -r now";
             Runtime.getRuntime().exec(comando);
         } catch (IOException e) {
             e.printStackTrace();

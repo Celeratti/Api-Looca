@@ -10,29 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b8710b3-97f1-4246-8942-44eeef513150" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/aplicacao_java_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/aplicacao_java_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logINFO2023-05-27.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/aplicacao_java_jar/aplicacao-java.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/aplicacao_java_jar/aplicacao-java.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/ComponentesDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/LoginDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dao/MaquinaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/domain/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dto/DadosMaquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dto/DadosMaquina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dto/DadosUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/dto/DadosUsuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/services/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/swing/TelaLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/celeratti/util/Maquina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/ComponentesDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/LoginDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/DAO/MaquinaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/domain/ConnectionFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/dto/DadosMaquina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/dto/DadosMaquina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/dto/DadosUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/dto/DadosUsuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/services/Services.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/swing/TelaLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/com/celeratti/util/Maquina.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,6 +235,7 @@
       <workItem from="1685213981606" duration="495000" />
       <workItem from="1685229575207" duration="262000" />
       <workItem from="1685234578947" duration="5637000" />
+      <workItem from="1685242520304" duration="628000" />
     </task>
     <servers />
   </component>

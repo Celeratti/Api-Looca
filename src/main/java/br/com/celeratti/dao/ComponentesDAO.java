@@ -2,10 +2,18 @@ package br.com.celeratti.dao;
 
 import br.com.celeratti.util.Maquina;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ComponentesDAO {
 
@@ -26,6 +34,22 @@ public class ComponentesDAO {
                 formatter.format(LocalDateTime.now()));
         maquina.getConAzure().update("INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
                 "cpuUtilizacao,latencia,Insercao,fkMaquina) VALUES (?,?,?,?,?,?);", maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), Timestamp.valueOf(LocalDateTime.now()), maquina.getId());
+        String nomeIdentificador = maquina.getConAzure().queryForObject("SELECT nomeIdentificador FROM maquina WHERE id = ?",String.class,maquina.getId());
+        try {
+            File arquivo = new File("logINFO" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+                    + ".txt");
+
+            if (!arquivo.exists()) {
+                arquivo.createNewFile();
+            }
+
+            List<String> lista = new ArrayList<>();
+            lista.add("A máquina "+  nomeIdentificador +" fez uma inserção  de dados neste momento: "
+                    + LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
+            Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
+        } catch (IOException e) {
+            System.out.println("Erro ao escrever no arquivo de log: " + e.getMessage());
+        }
 
         int idInsercao = maquina.getConAzure().queryForObject("SELECT TOP 1 id FROM [dbo].[grupoComponentes] ORDER BY insercao DESC;", Integer.class);
         if (maquina.getComponentes().getMemoriaEmUso() > 39.9 && maquina.getComponentes().getMemoriaEmUso() < 70.0) {
@@ -83,6 +107,6 @@ public class ComponentesDAO {
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (3,3,%d)", idInsercao));
         }
-        return maquina.getConAzure().queryForObject("SELECT nomeIdentificador FROM maquina WHERE id = ?",String.class,maquina.getId());
+        return nomeIdentificador;
     }
 }

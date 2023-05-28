@@ -12,8 +12,8 @@ public class Maquina {
     private Long id;
     private Componentes componentes;
     private Looca looca;
-    private Connection con;
-    private Connection conAzure;
+    private JdbcTemplate con;
+    private JdbcTemplate conAzure;
     private Services services;
 
 //
@@ -42,10 +42,10 @@ public class Maquina {
         return looca;
     }
 
-    public Connection getCon() {
+    public JdbcTemplate getCon() {
         return con;
     }
-    public Connection getConAzure() {
+    public JdbcTemplate getConAzure() {
         return conAzure;
     }
 

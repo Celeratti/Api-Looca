@@ -149,18 +149,18 @@ public class TelaLogin extends javax.swing.JFrame {
             txtEmail.setText("");
             txtSenha.setText("");
         }else{
-            if (dadosUsuario.email().equals(email) && dadosUsuario.senha().equals(senha)){
+            if (dadosUsuario.getEmail().equals(email) && dadosUsuario.getSenha().equals(senha)){
                 try{
                     DadosMaquina dadosMaquina = maquina.getServices().verificarMaquina(identificacao);
-                if (!(dadosMaquina.id() == null)) {
-                    if (dadosMaquina.fkEmpresa() == dadosUsuario.fkEmpresa()){
-                        if (dadosMaquina.status().equals("DESATIVADO")){
+                if (!(dadosMaquina.getId() == null)) {
+                    if (dadosMaquina.getFkEmpresa() == dadosUsuario.getFkEmpresa()){
+                        if (dadosMaquina.getStatus().equals("DESATIVADO")){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
-                                    dadosMaquina.id()));
+                                    dadosMaquina.getId()));
       
                         }
                         TelaInsercao tela = new TelaInsercao();
-                        maquina.setId(dadosMaquina.id());
+                        maquina.setId(dadosMaquina.getId());
                         tela.setMaq(maquina);
                         this.dispose();
                         tela.setVisible(true);

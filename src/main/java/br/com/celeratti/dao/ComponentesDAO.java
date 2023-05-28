@@ -31,7 +31,7 @@ public class ComponentesDAO {
             ps.setObject(5, LocalDateTime.now());
             ps.execute();
             ps.close();
-            System.out.println("\n\n| ID Maquina" + maquina.getId() +
+            System.out.println("\n\n| ID Maquina " + maquina.getId() +
                     " | Memória em uso: " + maquina.getComponentes().getMemoriaEmUso() +
                     " | Uso de disco: " +
                     maquina.getComponentes().getDiscoUso() +
@@ -137,6 +137,7 @@ public class ComponentesDAO {
         }
         try {
             PreparedStatement ps = maquina.getConAzure().prepareStatement("SELECT nomeIdentificador FROM maquina WHERE id = ?");
+            ps.setLong(1,maquina.getId());
             ResultSet rs = ps.executeQuery();
             String nomeIdentificador = "";
             while(rs.next()){

@@ -20,10 +20,13 @@ import java.io.IOException;
 public class SendMessage {
     
         
-    private String webHookUrl = "https://hooks.slack.com/services/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";
-    private String channel = "desenvolvimento-web";
     
-    public void sendMessage(String message) throws IOException {
+    
+    public void sendMessageNovaMaquina(String message) throws IOException {
+        
+        String webHookUrl = "https://hooks.slack.com/services/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";
+            String channel = "novas-maquinas";
+        
         try {
 
             Payload payload = Payload.builder()
@@ -38,6 +41,27 @@ public class SendMessage {
         }
 
     }
+    
+       public void sendMessageAlertas(String message) throws IOException {
+        
+        String webHookUrl = "https://hooks.slack.com/services/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";
+            String channel = "novas-maquinas";
+        
+        try {
+
+            Payload payload = Payload.builder()
+                    .channel(channel)
+                    .username("Celeratti")
+                    .text(message)
+                    .build();
+
+            WebhookResponse response = Slack.getInstance().send(webHookUrl, payload);
+        }catch(Exception e) {
+            System.out.printf("Erro ao enviar mensagem: %s", e.getMessage());
+        }
+
+    }
+    
 }
     
 

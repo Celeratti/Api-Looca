@@ -4,6 +4,7 @@ br\com\celeratti\swing\TelaLogin.class
 br\com\celeratti\swing\TelaInsercao$2.class
 br\com\celeratti\model\EspecificacoesHardware.class
 br\com\celeratti\swing\TelaInsercao$4.class
+br\com\celeratti\dto\DadosSlack.class
 br\com\celeratti\dao\ComponentesDAO.class
 br\com\celeratti\swing\TelaLogin$2.class
 br\com\celeratti\swing\TelaInsercao$3.class
@@ -18,3 +19,5 @@ br\com\celeratti\dto\DadosUsuario.class
 br\com\celeratti\swing\TelaInsercao$1.class
 br\com\celeratti\model\Componentes.class
 br\com\celeratti\domain\ConnectionFactory.class
+.netbeans_automatic_build
+br\com\celeratti\dao\SendMessage.class

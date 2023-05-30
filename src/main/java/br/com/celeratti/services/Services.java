@@ -4,6 +4,7 @@ import br.com.celeratti.dao.ComponentesDAO;
 import br.com.celeratti.dao.LoginDao;
 import br.com.celeratti.dao.MaquinaDao;
 import br.com.celeratti.dto.DadosMaquina;
+import br.com.celeratti.dto.DadosSlack;
 import br.com.celeratti.dto.DadosUsuario;
 import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.util.Maquina;
@@ -34,6 +35,11 @@ public class Services {
     public DadosUsuario verificarLogin(String email, String senha) {
         return loginDao.buscarUsuarios(email,senha);
     }
+    
+    public DadosSlack dadosSlack(String identificacao) {
+        return maquinaDao.buscarMaquinaSlack(identificacao);
+    }
+    
 
     public DadosMaquina verificarMaquina(String identificacao) {
             return maquinaDao.buscarMaquina(identificacao);

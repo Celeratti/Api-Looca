@@ -13,10 +13,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ComponentesDAO {
+        public String inserirDadosComponentes(Maquina maquina) {
 
-    public String inserirDadosComponentes(Maquina maquina) {
+        SendMessage enviaMensagemSlack = new SendMessage();
+            
         String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
                 "cpuUtilizacao,latencia,Insercao) VALUES (?,?,?,?,?);";
         maquina.getCon().update(sql, maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), LocalDateTime.now());
@@ -55,10 +59,16 @@ public class ComponentesDAO {
             System.out.println("\n\nA memória está entre 40% e 69%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (1,1,%d)", idInsercao));
+            //enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s,\n", maquina.getNo));
         } else if (maquina.getComponentes().getMemoriaEmUso() > 69.9 && maquina.getComponentes().getMemoriaEmUso() < 90) {
             System.out.println("\n\nA memória está entre 70% e 89%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (2,1,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getMemoriaEmUso() > 89.9) {
             System.out.println("\n\nA memória está acima de 90%...");
             System.out.println("Inserindo alerta no banco de dados...");

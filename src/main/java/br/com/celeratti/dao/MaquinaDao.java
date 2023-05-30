@@ -2,6 +2,7 @@ package br.com.celeratti.dao;
 
 import br.com.celeratti.domain.ConnectionFactory;
 import br.com.celeratti.dto.DadosMaquina;
+import br.com.celeratti.dto.DadosSlack;
 import br.com.celeratti.model.EspecificacoesHardware;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -41,6 +42,16 @@ public class MaquinaDao {
 //        }
         return dados.get(0);
     }
+    
+        public DadosSlack buscarMaquinaSlack(String identificacao) {
+        List<DadosSlack> dados = null;
+        String sql = "SELECT e.nome, m.andar FROM maquina m INNER JOIN estacao e ON m.fkestacao = e.id INNER JOIN linha l ON e.fkLinha = l.id WHERE m.nomeIdentificador = ?;";
+        dados = con.query(sql, new BeanPropertyRowMapper<>(DadosSlack.class),identificacao);
+        return dados.get(0);
+    }
+    
+    
+    
 
     public void enviarEspecsProBanco(EspecificacoesHardware especificacoesHardware) {
         String sql = "INSERT INTO especificacoesHardware(memoriaTotal,tamanhoDisco,processador,cpuTotal,ipv4,ipv6,fkMaquina) VALUES (?,?,?,?,?,?,?)";

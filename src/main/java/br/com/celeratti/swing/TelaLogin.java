@@ -6,6 +6,7 @@ package br.com.celeratti.swing;
 
 import br.com.celeratti.dao.SendMessage;
 import br.com.celeratti.dto.DadosMaquina;
+import br.com.celeratti.dto.DadosSlack;
 import br.com.celeratti.dto.DadosUsuario;
 import br.com.celeratti.model.EspecificacoesHardware;
 import br.com.celeratti.services.Services;
@@ -144,6 +145,10 @@ public class TelaLogin extends javax.swing.JFrame {
         char[] passwd = txtSenha.getPassword();
         String senha = new String(passwd);
         DadosUsuario dadosUsuario = maquina.getServices().verificarLogin(email,senha);
+        
+
+        
+
         if (dadosUsuario == null){
             JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
             txtEmail.setText("");
@@ -157,7 +162,35 @@ public class TelaLogin extends javax.swing.JFrame {
                         if (dadosMaquina.getStatus().equals("DESATIVADO")){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
                                     dadosMaquina.getId()));
-      
+                                    SendMessage objetoEnviaSlack = new SendMessage();
+                            try {
+                                
+                                 String processador = maquina.getLooca().getProcessador().getNome();
+
+                                
+                                Double tamanhoDisco =(double) maquina.getLooca().getGrupoDeDiscos().getTamanhoTotal();
+                               Double tamanhoDiscoGB = tamanhoDisco / (1024.0 * 1024.0 * 1024.0);
+                               String discoFormatado = String.format("%.2f GB", tamanhoDiscoGB); 
+
+
+                                
+                                Double memoriaTotal = (double)maquina.getLooca().getMemoria().getTotal();
+                                Double memoriaTotalGB = memoriaTotal / (1024.0 * 1024.0 * 1024.0);
+                              
+                                String memoriaFormatada = String.format("%.2f GB", memoriaTotalGB); 
+                                
+                                objetoEnviaSlack.sendMessageNovaMaquina(String.format("Nova máquina cadastrada:\n\n"
+                                        + "SO: %s\n"
+                                        + "Fabricante: %s\n"
+                                        + "Nome: %s\n\n"
+                                        + "Memória total: %s\n"
+                                        + "Tamanho do disco: %s\n"
+                                        + "Processador: %s"
+                                        ,maquina.getLooca().getSistema().getSistemaOperacional(), maquina.getLooca().getSistema().getFabricante(), dadosMaquina.getNomeIdentificador(),memoriaFormatada, discoFormatado, processador));
+                                
+                            } catch (IOException ex) {
+                                Logger.getLogger(TelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+                            }
                         }
                         TelaInsercao tela = new TelaInsercao();
                         maquina.setId(dadosMaquina.getId());

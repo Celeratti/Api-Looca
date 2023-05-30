@@ -5,44 +5,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 
 public class ConnectionFactory {
-//    public Connection getConnection() {
-//        try{
-//            return DriverManager.getConnection("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false","root",
-//                    "urubu100");
-//        } catch (SQLException e){
-//            throw new RuntimeException(e);
-//        }
-//    }
 
     public JdbcTemplate getConnection() {
-        try{
+        try {
             BasicDataSource dataSource = new BasicDataSource();
             dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true" +
-//                "&autoReconnect=true&useSSL=false");
             dataSource.setUrl("jdbc:mysql://localhost:3306/celeratti?allowPublicKeyRetrieval=true&autoReconnect=true&useSSL=false");
-//        dataSource.setUrl("jdbc:mysql://localhost:3306/celeratti");
             dataSource.setUsername("root");
-            dataSource.setPassword("urubu100");
+            dataSource.setPassword("root");
             return new JdbcTemplate(dataSource);
-        }catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Erro ao conectar ao banco de dados MySQL no container Docker");
             return null;
         }
-
-
-//        try{
-//            Class.forName("com.mysql.cj.jdbc.Driver");
-//            return DriverManager.getConnection("","root",
-//                    "root");
-//        } catch (Exception e){
-//            throw new RuntimeException(e);
-//        }
-//        } catch (Exception e){
-//            throw new ConexaoException("Erro ao conectar ao banco de dados MySQL no container " +
-//                    "Docker");
-//        }
     }
 
     public JdbcTemplate getConnectionAzure() {

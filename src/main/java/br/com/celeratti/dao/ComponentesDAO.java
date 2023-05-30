@@ -10,6 +10,7 @@ import java.sql.*;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class ComponentesDAO {
             
         String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
                 "cpuUtilizacao,latencia,Insercao) VALUES (?,?,?,?,?);";
-        maquina.getCon().update(sql, maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), LocalDateTime.now());
+        maquina.getCon().update(sql, maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), LocalDateTime.now(ZoneId.of("America/Sao_Paulo")));
         DecimalFormat formatador = new DecimalFormat("#.##");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
         System.out.println("| ID Maquina " + maquina.getId() +
@@ -34,12 +35,12 @@ public class ComponentesDAO {
                 formatador.format(maquina.getComponentes().getCpuUtilizacao()) +
                 "| Latência: " + formatador.format(maquina.getComponentes().getLatencia()) +
                 "| Momento captura: " +
-                formatter.format(LocalDateTime.now()));
+                formatter.format(LocalDateTime.now(ZoneId.of("America/Sao_Paulo"))));
         maquina.getConAzure().update("INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
-                "cpuUtilizacao,latencia,Insercao,fkMaquina) VALUES (?,?,?,?,?,?);", maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), Timestamp.valueOf(LocalDateTime.now()), maquina.getId());
+                "cpuUtilizacao,latencia,Insercao,fkMaquina) VALUES (?,?,?,?,?,?);", maquina.getComponentes().getMemoriaEmUso(), maquina.getComponentes().getDiscoUso(), maquina.getComponentes().getCpuUtilizacao(), maquina.getComponentes().getLatencia(), Timestamp.valueOf(LocalDateTime.now(ZoneId.of("America/Sao_Paulo"))), maquina.getId());
         String nomeIdentificador = maquina.getConAzure().queryForObject("SELECT nomeIdentificador FROM maquina WHERE id = ?",String.class,maquina.getId());
         try {
-            File arquivo = new File("logINFO" + LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+            File arquivo = new File("logINFO" + LocalDateTime.now(ZoneId.of("America/Sao_Paulo")).format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
                     + ".txt");
 
             if (!arquivo.exists()) {

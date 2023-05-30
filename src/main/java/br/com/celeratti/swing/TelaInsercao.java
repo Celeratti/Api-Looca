@@ -109,6 +109,7 @@ public class TelaInsercao extends javax.swing.JFrame {
     public void inserir() {
         if(maq.getServices().verificarConexao()){
             maq.getComponentes().capturar(maq.getLooca());
+            maq.getServices().enviarProBanco(maq);
             lblInsercao.setText(LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
         }else{
             maq.getServices().reiniciar();

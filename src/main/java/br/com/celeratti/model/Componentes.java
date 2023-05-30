@@ -34,6 +34,7 @@ public class Componentes {
             // Criar conexão HTTP
             HttpURLConnection connection = (HttpURLConnection) new URL(url).openConnection();
             connection.setRequestMethod("GET");
+            int responseCode = connection.getResponseCode();
             long endTime = System.nanoTime();
             long latencyNs = endTime - startTime;
             this.latencia =  (double) latencyNs / 1_000_000; // Convertendo para milissegundos
@@ -73,10 +74,9 @@ public class Componentes {
     }
     @Override
     public String toString() {
-        return "Componentes: " + "%\n" +
-                "Uso de memória: " + memoriaEmUso + "%\n" +
-                "Uso de disco: " + discoUso + "%\n" +
-                "Latência: " + latencia + " ms\n" +
-                "Uso de CPU: " + cpuUtilizacao;
+        return String.format("%.2f", memoriaEmUso) + "%\n" +
+                String.format("%.2f", discoUso) + "%\n" +
+                String.format("%.2f", latencia) + " ms\n" +
+                String.format("%.2f", cpuUtilizacao) + "%\n";
     }
 }

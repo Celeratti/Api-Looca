@@ -145,21 +145,18 @@ public class TelaLogin extends javax.swing.JFrame {
         char[] passwd = txtSenha.getPassword();
         String senha = new String(passwd);
         DadosUsuario dadosUsuario = maquina.getServices().verificarLogin(email,senha);
-        
-
-        
-
         if (dadosUsuario == null){
             JOptionPane.showMessageDialog(this,"Email ou senha inválidos");
             txtEmail.setText("");
             txtSenha.setText("");
+            txtIdentificacao.setText("");
         }else{
             if (dadosUsuario.getEmail().equals(email) && dadosUsuario.getSenha().equals(senha)){
                 try{
                     DadosMaquina dadosMaquina = maquina.getServices().verificarMaquina(identificacao);
-                if (!(dadosMaquina.getId() == null)) {
+                if (!(dadosMaquina == null)) {
                     if (dadosMaquina.getFkEmpresa() == dadosUsuario.getFkEmpresa()){
-                        if (dadosMaquina.getStatus().equals("DESATIVADO")){
+                        if (dadosMaquina.getStatus().equals("DESATIVADA")){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
                                     dadosMaquina.getId()));
                                     SendMessage objetoEnviaSlack = new SendMessage();

@@ -24,7 +24,7 @@ public class SendMessage {
     
     public void sendMessageNovaMaquina(String message) throws IOException {
         
-        String webHookUrl = "https://hooks.slack.com/services/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";
+        String webHookUrl = "https://hooks.slack.com/services/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";
             String channel = "novas-maquinas";
         
         try {

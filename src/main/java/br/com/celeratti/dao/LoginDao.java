@@ -16,11 +16,9 @@ import java.util.List;
 
 public class LoginDao {
     private JdbcTemplate con;
-
     public LoginDao() {
         this.con = new ConnectionFactory().getConnectionAzure();
     }
-
     //    Busca usuários com os dados que foram digitados na tela de login
     public DadosUsuario buscarUsuarios(String email, String senha) {
         DadosUsuario dadosUsuario = null;

@@ -60,7 +60,6 @@ public class ComponentesDAO {
             System.out.println("\n\nA memória está entre 40% e 69%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (1,1,%d)", idInsercao));
-            //enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s,\n", maquina.getNo));
         } else if (maquina.getComponentes().getMemoriaEmUso() > 69.9 && maquina.getComponentes().getMemoriaEmUso() < 90) {
             System.out.println("\n\nA memória está entre 70% e 89%...");
             System.out.println("Inserindo alerta no banco de dados...");
@@ -74,48 +73,98 @@ public class ComponentesDAO {
             System.out.println("\n\nA memória está acima de 90%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (3,1,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         PreparedStatement psDisco;
         if (maquina.getComponentes().getDiscoUso() > 54.9 && maquina.getComponentes().getDiscoUso() < 79.0) {
             System.out.println("\n\nO disco está entre 55% e 78%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (1,2,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getDiscoUso() > 78.9 && maquina.getComponentes().getDiscoUso() < 86.0) {
             System.out.println("\n\nO disco está entre 79% e 85%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (2,2,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getDiscoUso() > 85.9) {
             System.out.println("\n\nO disco está acima de 85%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (3,2,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         PreparedStatement psCpu;
         if (maquina.getComponentes().getCpuUtilizacao() > 64.9 && maquina.getComponentes().getCpuUtilizacao() < 80.0) {
             System.out.println("\n\nA CPU está entre 65% e 79%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (1,4,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getCpuUtilizacao() > 79.9 && maquina.getComponentes().getCpuUtilizacao() < 90.0) {
             System.out.println("\n\nA CPU está entre 80% e 89%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (2,4,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getCpuUtilizacao() > 89.9) {
             System.out.println("\n\nA CPU está acima de 90%...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (3,4,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         PreparedStatement psLatencia;
         if (maquina.getComponentes().getLatencia() > 49 && maquina.getComponentes().getLatencia() < 101) {
             System.out.println("\n\nA latência está entre 50ms e 100ms...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (1,3,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getLatencia() > 101 && maquina.getComponentes().getLatencia() < 200) {
             System.out.println("\n\nA latência está entre 101ms e 199ms...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (2,3,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (maquina.getComponentes().getLatencia() > 200) {
             System.out.println("\n\nA latência está acima de 200ms...");
             System.out.println("Inserindo alerta no banco de dados...");
             maquina.getConAzure().update(String.format("INSERT INTO alertas (fkTipoAlerta,fkComponenteCausa,fkGrupoComponentes) VALUES (3,3,%d)", idInsercao));
+            try {
+                enviaMensagemSlack.sendMessageAlertas(String.format("Nome: %s", nomeIdentificador));
+            } catch (IOException ex) {
+                Logger.getLogger(ComponentesDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return nomeIdentificador;
     }

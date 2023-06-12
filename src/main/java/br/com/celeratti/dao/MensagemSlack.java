@@ -4,9 +4,9 @@ import com.github.seratch.jslack.api.webhook.Payload;
 import com.github.seratch.jslack.api.webhook.WebhookResponse;
 import java.io.IOException;
 
-public class SendMessage {  
+public class MensagemSlack {  
     public void sendMessageNovaMaquina(String message) throws IOException {
-        String webHookUrl = "https://hooks.slack.com/services/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";
+        String webHookUrl = "https://hooks.slack.com/services/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";
             String channel = "novas-maquinas";
         try {
             Payload payload = Payload.builder()

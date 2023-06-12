@@ -4,7 +4,7 @@
  */
 package br.com.celeratti.swing;
 
-import br.com.celeratti.dao.SendMessage;
+import br.com.celeratti.dao.MensagemSlack;
 import br.com.celeratti.dto.DadosMaquina;
 import br.com.celeratti.dto.DadosSlack;
 import br.com.celeratti.dto.DadosUsuario;
@@ -159,7 +159,7 @@ public class TelaLogin extends javax.swing.JFrame {
                         if (dadosMaquina.getStatus().equals("DESATIVADA")){
                             maquina.getServices().inserirEspecs(new EspecificacoesHardware(maquina.getLooca(),
                                     dadosMaquina.getId()));
-                                    SendMessage objetoEnviaSlack = new SendMessage();
+                                    MensagemSlack objetoEnviaSlack = new MensagemSlack();
                             try {
                                 
                                  String processador = maquina.getLooca().getProcessador().getNome();

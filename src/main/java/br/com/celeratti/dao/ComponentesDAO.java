@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class ComponentesDAO {
         public String inserirDadosComponentes(Maquina maquina) {
 
-        SendMessage enviaMensagemSlack = new SendMessage();
+        MensagemSlack enviaMensagemSlack = new MensagemSlack();
             
         String sql = "INSERT INTO grupoComponentes(memoriaEmUso, discoUso," +
                 "cpuUtilizacao,latencia,Insercao) VALUES (?,?,?,?,?);";
